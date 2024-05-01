@@ -2,7 +2,7 @@
 
 CD "$PWD"
 
-echo -e "\nWelcome in LIBFT Tester Script\n"
+echo -e "\n\033[0;36mWelcome in LIBFT Tester Script\033[0m\n"
 
 exit_code=0
 
@@ -23,6 +23,6 @@ for file in test/**/tester.sh; do
 	fi
 done
 
-echo -e "\nEnd of LIBFT Tester Script"
+echo -e "\n\033[0;36mEnd of LIBFT Tester Script\033[0m"
 
 exit $exit_code
