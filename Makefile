@@ -6,7 +6,7 @@
 #    By: gdandele <gdandele@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/10 15:45:59 by gdandele          #+#    #+#              #
-#    Updated: 2024/05/01 10:04:10 by gdandele         ###   ########.fr        #
+#    Updated: 2024/05/01 17:46:53 by gdandele         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,9 @@ ${NAME}: ${OBJS}
 .c.o:
 	${CC} ${CCFLAGS} -I include -c $< -o $@
 
+test:
+	bash test/script.sh
+
 clean:
 	rm -f ${OBJS}
 
@@ -36,4 +39,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: bonus fclean re
+.PHONY: test bonus fclean re
