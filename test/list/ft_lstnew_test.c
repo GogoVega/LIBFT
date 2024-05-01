@@ -13,6 +13,7 @@ int main()
 	{
 		failed(&exit_code);
 	}
+	free(list1);
 
 	return (exit_code);
 }

@@ -10,6 +10,7 @@ int main()
 	} else {
 		failed(&exit_code);
 	}
+	free(result);
 
 	result = ft_itoa(2147483647);
 	if (strcmp(result, "2147483647") == 0) {
@@ -17,6 +18,7 @@ int main()
 	} else {
 		failed(&exit_code);
 	}
+	free(result);
 
 	result = ft_itoa(-2147483648);
 	if (strcmp(result, "-2147483648") == 0) {
@@ -24,6 +26,7 @@ int main()
 	} else {
 		failed(&exit_code);
 	}
+	free(result);
 
 	return (exit_code);
 }

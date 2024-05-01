@@ -14,10 +14,12 @@ int main()
 			if (arr[i] != 0)
 			{
 				failed(&exit_code);
+				free(arr);
 				return (1);
 			}
 		}
 		success();
+		free(arr);
 	}
 	else
 	{
@@ -35,10 +37,12 @@ int main()
 			if (str[i] != '\0')
 			{
 				failed(&exit_code);
+				free(str);
 				return (1);
 			}
 		}
 		success();
+		free(str);
 	}
 	else
 	{
@@ -61,10 +65,12 @@ int main()
 			if (points[i].x != 0 || points[i].y != 0)
 			{
 				failed(&exit_code);
+				free(points);
 				return (1);
 			}
 		}
 		success();
+		free(points);
 	}
 	else
 	{

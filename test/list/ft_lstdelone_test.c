@@ -50,6 +50,7 @@ int main()
 	{
 		failed(&exit_code);
 	}
+	free(list3);
 
 	return (exit_code);
 }

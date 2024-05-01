@@ -29,6 +29,7 @@ int main()
 	{
 		failed(&exit_code);
 	}
+	free(list2);
 
 	// Test case 3: Testing with a list containing multiple elements
 	t_list *list3 = ft_lstnew("Hello");
@@ -46,6 +47,9 @@ int main()
 	{
 		failed(&exit_code);
 	}
+	free(list3);
+	free(new_node);
+	free(new_node2);
 
 	return (exit_code);
 }

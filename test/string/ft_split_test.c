@@ -13,6 +13,15 @@ static int compareArrays(char **arr1, char **arr2, int size)
 	return (1);
 }
 
+static void	free_array(char **array)
+{
+	int	i = 0;
+
+	while (array[i])
+		free(array[i++]);
+	free(array);
+}
+
 int main()
 {
 	int	exit_code = 0;
@@ -30,6 +39,7 @@ int main()
 	{
 		failed(&exit_code);
 	}
+	free_array(result1);
 
 	// Test case 2: Splitting a string with a single word
 	const char *str2 = "Hello";
@@ -44,6 +54,7 @@ int main()
 	{
 		failed(&exit_code);
 	}
+	free_array(result2);
 
 	// Test case 3: Splitting an empty string
 	const char *str3 = "";
@@ -58,6 +69,7 @@ int main()
 	{
 		failed(&exit_code);
 	}
+	free_array(result3);
 
 	// Test case 4: Splitting a string with delimiter at start and end
 	const char *str4 = "  HelloWorld  ";
@@ -72,6 +84,7 @@ int main()
 	{
 		failed(&exit_code);
 	}
+	free_array(result4);
 
 	// Test case 5: Splitting a string with a non-alphanumeric delimiter
 	const char *str5 = "Hello,World!";
@@ -86,6 +99,7 @@ int main()
 	{
 		failed(&exit_code);
 	}
+	free_array(result5);
 
 	return (exit_code);
 }

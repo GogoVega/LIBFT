@@ -13,6 +13,7 @@ int main()
 	} else {
 		failed(&exit_code);
 	}
+	free(new_node);
 
 	// Test case 2: Adding a new node to a non-empty list
 	t_list *list2 = ft_lstnew("Node 1");
@@ -23,6 +24,8 @@ int main()
 	} else {
 		failed(&exit_code);
 	}
+	free(list2);
+	free(new_node2);
 
 	// Test case 3: Adding a NULL node to a non-empty list
 	t_list *list3 = ft_lstnew("Node 1");
@@ -32,6 +35,7 @@ int main()
 	} else {
 		failed(&exit_code);
 	}
+	free(list3);
 
 	return (exit_code);
 }

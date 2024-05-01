@@ -24,6 +24,7 @@ int main()
 	{
 		failed(&exit_code);
 	}
+	free(list1);
 
 	// Test case 2: Testing with a null list and a valid del function
 	t_list *list2 = NULL;
@@ -37,6 +38,7 @@ int main()
 	{
 		failed(&exit_code);
 	}
+	free(list2);
 
 	// Test case 3: Testing with a non-null list and a null del function
 	t_list *list3 = ft_lstnew("Hello");
@@ -51,6 +53,7 @@ int main()
 	{
 		failed(&exit_code);
 	}
+	free(list3);
 
 	return (exit_code);
 }

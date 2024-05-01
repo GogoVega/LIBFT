@@ -13,6 +13,7 @@ int main()
 	} else {
 		failed(&exit_code);
 	}
+	free(result1);
 
 	char str2[] = "This is a test";
 	unsigned int start2 = 0;
@@ -23,6 +24,7 @@ int main()
 	} else {
 		failed(&exit_code);
 	}
+	free(result2);
 
 	char str3[] = "Hello, world!";
 	unsigned int start3 = 13;
@@ -33,6 +35,7 @@ int main()
 	} else {
 		failed(&exit_code);
 	}
+	free(result3);
 
 	char str4[] = "Hello, world!";
 	unsigned int start4 = 20;
@@ -43,6 +46,7 @@ int main()
 	} else {
 		failed(&exit_code);
 	}
+	free(result4);
 
 	char str5[] = "";
 	unsigned int start5 = 0;
@@ -53,6 +57,7 @@ int main()
 	} else {
 		failed(&exit_code);
 	}
+	free(result5);
 
 	return (exit_code);
 }

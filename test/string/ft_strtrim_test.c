@@ -13,6 +13,7 @@ int main()
 	} else {
 		failed(&exit_code);
 	}
+	free(result1);
 
 	// Test Case 2: Trim leading and trailing characters from set
 	char str2[] = "###This is a test###";
@@ -23,6 +24,7 @@ int main()
 	} else {
 		failed(&exit_code);
 	}
+	free(result2);
 
 	// Test Case 3: Empty string
 	char str3[] = "";
@@ -33,6 +35,7 @@ int main()
 	} else {
 		failed(&exit_code);
 	}
+	free(result3);
 
 	// Test Case 4: No trimming required
 	char str4[] = "No trimming required";
@@ -43,6 +46,7 @@ int main()
 	} else {
 		failed(&exit_code);
 	}
+	free(result4);
 
 	return (exit_code);
 }

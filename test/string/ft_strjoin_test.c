@@ -12,7 +12,6 @@ int main()
 	}
 	free(result);
 
-	ft_bzero(result, sizeof(result));
 	result = ft_strjoin("", "Hello");
 	if (strcmp(result, "Hello") == 0) {
 		success();
@@ -21,7 +20,6 @@ int main()
 	}
 	free(result);
 
-	ft_bzero(result, sizeof(result));
 	result = ft_strjoin("Hello", "");
 	if (strcmp(result, "Hello") == 0) {
 		success();
@@ -30,7 +28,6 @@ int main()
 	}
 	free(result);
 
-	ft_bzero(result, sizeof(result));
 	result = ft_strjoin("", "");
 	if (strcmp(result, "") == 0) {
 		success();
