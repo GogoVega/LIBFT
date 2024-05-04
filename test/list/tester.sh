@@ -11,7 +11,7 @@ if [ ! -d "src/$dirname" ]; then
 fi
 
 count=1
-total=$(find "test/$dirname" -name "*.c" -maxdepth 1 -type f | wc -l)
+total=$(find "test/$dirname" -name "*_test.c" -maxdepth 1 -type f | wc -l)
 return_code=0
 
 # Trouver tous les fichiers .c dans le répertoire de test et les exécuter

@@ -12,7 +12,7 @@ fi
 
 count=1
 return_code=0
-total=$(find "test/$dirname" -name "*.c" -maxdepth 1 -type f | wc -l)
+total=$(find "test/$dirname" -name "*_test.c" -maxdepth 1 -type f | wc -l)
 
 # Test for FT_PRINTF
 # Files Source: https://github.com/Tripouille/printfTester
