@@ -17,11 +17,19 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Run Build
-      run: make all
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.10"
+
+    - name: Install Norminette
+      run: pip install norminette
 
     - name: Run Norminette
       run: make norme
+
+    - name: Run Build
+      run: make all
 
     - name: Run Test
       run: make test
