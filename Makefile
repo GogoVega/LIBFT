@@ -6,7 +6,7 @@
 #    By: gdandele <gdandele@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/10 15:45:59 by gdandele          #+#    #+#              #
-#    Updated: 2024/05/01 17:46:53 by gdandele         ###   ########.fr        #
+#    Updated: 2024/05/04 13:37:21 by gdandele         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,8 +28,11 @@ ${NAME}: ${OBJS}
 .c.o:
 	${CC} ${CCFLAGS} -I include -c $< -o $@
 
-test:
+test: all
 	bash test/script.sh
+
+norme:
+	norminette -R CheckDefine src
 
 clean:
 	rm -f ${OBJS}
