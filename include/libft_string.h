@@ -6,7 +6,7 @@
 /*   By: gdandele <gdandele@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 11:30:43 by gdandele          #+#    #+#             */
-/*   Updated: 2024/05/01 14:55:34 by gdandele         ###   ########.fr       */
+/*   Updated: 2024/05/05 16:00:08 by gdandele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,34 @@ void	*ft_memmove(void *dst, const void *src, size_t len);
  * @return void* The original value of dst.
  */
 void	*ft_memset(void *s, int c, size_t n);
+
+/**
+ * @brief Allocates (with malloc) and pads the start of a string with a
+ * specified character. It pads the start of the string `str` with the
+ * character `c` until the length of the string is equal to `len`.
+ * If the length of the string is already greater than or equal to `len`,
+ * the function returns the original string.
+ *
+ * @param str The string to be padded.
+ * @param c The character used for padding.
+ * @param len The desired length of the padded string.
+ * @return char* The padded string or NULL if the allocation fails.
+ */
+char	*ft_padstart(char *str, char c, size_t len);
+
+/**
+ * @brief Allocates (with malloc) and pads the end of a string with a
+ * specified character. It pads the end of the string `str` with the
+ * character `c` until the length of the string is equal to `len`.
+ * If the length of the string is already greater than or equal to `len`,
+ * the function returns the original string.
+ *
+ * @param str The string to be padded.
+ * @param c The character used for padding.
+ * @param len The desired length of the padded string.
+ * @return char* The padded string or NULL if the allocation fails.
+ */
+char	*ft_padend(char *str, char c, size_t len);
 
 /**
  * @brief Allocates (with malloc) and returns an array of strings obtained by
