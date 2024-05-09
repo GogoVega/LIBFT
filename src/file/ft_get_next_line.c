@@ -6,7 +6,7 @@
 /*   By: gdandele <gdandele@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 14:43:04 by gdandele          #+#    #+#             */
-/*   Updated: 2024/05/01 14:56:06 by gdandele         ###   ########.fr       */
+/*   Updated: 2024/05/09 15:53:00 by gdandele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,11 @@ static int	append_cache_from_file(int fd, char **cache)
 		buffer[i++] = '\0';
 	result = read(fd, buffer, BUFFER_SIZE);
 	if (result > -1)
+	{
 		*cache = ft_strjoin(*cache, buffer);
+		if (!*cache)
+			return (-1);
+	}
 	else
 		*cache = NULL;
 	if (tmp)
@@ -84,10 +88,9 @@ char	*ft_get_next_line(int fd)
 	}
 	if (cache[fd] == NULL)
 	{
-		cache[fd] = (char *) malloc(sizeof(char) * 1);
+		cache[fd] = ft_strdup("");
 		if (!cache[fd])
 			return (NULL);
-		cache[fd][0] = 0;
 	}
 	line = get_from_cache(fd, &cache[fd]);
 	if (!line)
