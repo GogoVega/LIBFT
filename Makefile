@@ -6,7 +6,7 @@
 #    By: gdandele <gdandele@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/10 15:45:59 by gdandele          #+#    #+#              #
-#    Updated: 2024/05/04 13:37:21 by gdandele         ###   ########.fr        #
+#    Updated: 2024/05/07 22:25:51 by gdandele         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,24 +18,25 @@ CCFLAGS = -Wall -Werror -Wextra
 
 SRC = ${wildcard src/**/ft_*.c}
 
-OBJS = ${SRC:.c=.o}
+OBJS = $(patsubst src/%.c,obj/%.o,$(SRC))
 
 all: ${NAME}
 
 ${NAME}: ${OBJS}
 	ar -rcs ${NAME} ${OBJS}
 
-.c.o:
+obj/%.o: src/%.c
+	@mkdir -p ${dir $@}
 	${CC} ${CCFLAGS} -I include -c $< -o $@
 
 test: all
 	bash test/script.sh
 
 norme:
-	norminette -R CheckDefine src
+	norminette -R CheckDefine src include
 
 clean:
-	rm -f ${OBJS}
+	rm -rf obj
 
 fclean: clean
 	rm -f ${NAME}

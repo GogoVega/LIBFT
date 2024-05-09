@@ -7,13 +7,15 @@ const OUTPUT = "./test/file/bonus";
 
 (function () {
 	if (!existsSync(PATH))
-		return;
+		throw new Error("Fuck the directory is missing!");
 
 	const files = readdirSync(PATH, { encoding: "utf-8" });
 
+	if (!files.length) throw new Error("There is no test file Bitch!");
+
 	const contents = files
 		.map((filename) => readFileSync(PATH + "/" + filename, { encoding: "utf-8" }))
-		.map((content) => content.match(/(.*\n?)/g)?.filter((line) => line !== ""));
+		.map((content) => content.match(/(.*\n?)/g)?.filter((line) => line));
 
 	const newContent = [];
 

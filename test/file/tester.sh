@@ -40,7 +40,7 @@ for file in test/$dirname/files/*; do
 	fi
 done
 
-# helper function to test for existance of node
+# Helper function to test for existance of Node.JS
 function HAS_NODE {
   if [ -x "$(command -v node)" ]; then return 0; else return 1; fi
 }
@@ -54,6 +54,7 @@ else
 	exit 0
 fi
 
+# Flemme de le faire en Python...
 node test/$dirname/bonus-script.js
 
 ./tester $allFiles > output

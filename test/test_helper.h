@@ -6,16 +6,12 @@
 
 void success()
 {
-	printf("\033[0;32m");
-	printf("\u2705 Test passed!\n");
-	printf("\033[0;37m");
+	printf("\u2705 \033[0;32mTest passed!\033[0;37m\n");
 }
 
 void failed(int *exit_code)
 {
-	printf("\x1B[31m");
-	printf("\u274c Test failed!\n");
-	printf("\033[0;37m");
+	printf("\u274c \x1B[31mTest failed!\033[0;37m\n");
 	*exit_code = 1;
 }
 
