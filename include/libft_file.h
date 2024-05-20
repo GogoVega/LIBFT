@@ -6,7 +6,7 @@
 /*   By: gdandele <gdandele@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 14:45:24 by gdandele          #+#    #+#             */
-/*   Updated: 2024/05/20 13:24:47 by gdandele         ###   ########.fr       */
+/*   Updated: 2024/05/20 13:54:48 by gdandele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,12 @@
 # include <unistd.h>
 # include <limits.h>
 
-# include <sys/syslimits.h>
-
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
 # endif
 
 # ifndef OPEN_MAX
-# define OPEN_MAX 10240 
+#  define OPEN_MAX 10240 
 # endif
 
 /**
